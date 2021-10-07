@@ -14,7 +14,7 @@ def convertirString(price)
 end
 
 convertirString(price)
-tableau=Hash[names.zip(prices)] 
+tableau=Hash[names.zip(price)] 
 
 def maxValue(tableau,price,names)
      i=1
