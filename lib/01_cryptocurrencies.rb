@@ -10,7 +10,6 @@ def convertirString(price)
         price [i]= price[i].to_f
         i+=1
     end
-    return price
 end
 
 convertirString(price)
@@ -46,9 +45,10 @@ end
 maxValue(tableau,price,names)
 
 def devisesInferieur(tableau)
-    tabs = tableau.select {|k,v|v>6000}
+    tabs = tableau.select {|k,v|v<6000}
     print tabs
 
 end
 
 
+devisesInferieur(tableau)
