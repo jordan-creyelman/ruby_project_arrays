@@ -46,7 +46,6 @@ def maj(data)
     print total
 end
 
-Trier par ordre alphabétique
 
 def sort(data) 
      nombre =data_length(data)
