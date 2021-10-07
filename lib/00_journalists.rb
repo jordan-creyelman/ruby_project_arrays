@@ -7,11 +7,13 @@ def data_length(data)
     return number
 
 end
+data_length(data)
 def count_string(data)
     mot=data.min_by(&:length)
     print mot
 end
-count_string(data)
+
+
 def count_five(data)
     nombre=data_length(data)
     total=0
@@ -27,7 +29,6 @@ def count_five(data)
     end
     print total
 end
-count_five(data)
 def maj(data)
     nombre=data_length(data)
     i=0
@@ -59,32 +60,30 @@ def sort(data)
      dataSort.sort!
      print dataSort
 end
-def count_stringMax(data)
-    nombre=data_length(data)
-    numberLittle=data[0].size
-    mot=data[0]
-    i=1
-    while i<nombre
-         number=data[i].size
+# def count_stringMax(data)
+#     nombre=data_length(data)
+#     numberLittle=data[0].size
+#     mot=data[0]
+#     i=1
+#     while i<nombre
+#          number=data[i].size
            
-        if number > numberLittle
-            numberLittle=number
-        end
-        i+=1
-    end
-    print numberLittle
-    return 
-end
-count_stringMax(data)
+#         if number > numberLittle
+#             numberLittle=number
+#         end
+#         i+=1
+#     end
+#     print numberLittle
+#     return 
+# end
 
-def taille(data)
-    
-end    
+
+
 
 def decroissant(data)
     print data.sort_by(&:length)
 end
-decroissant(data)
+
 def position(data)
     nombre=data_length(data)
     i=0
@@ -98,5 +97,27 @@ def position(data)
     end
     print " voici la position de penser#{position}"
 end
+
+def trier(data)
+    nombre=data_length(data)
+    i=0
+    j=0
+    count =0
+    tableau =Array.new
+    while j<=data.map(&:length).max 
+        i=0
+        while i<nombre
+            if  data[i].size == j
+                  count +=1
+            end
+            i+=1
+        end
+        puts " voici le nombre handle#{count} pour autant de caractère #{j}"
+        count =0
+        j+=1
+    end
+    
+end
+trier(data)
 
 
