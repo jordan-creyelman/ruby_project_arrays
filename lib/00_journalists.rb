@@ -4,18 +4,19 @@ data = ["@jcunniet","@PaulLampon","@Aziliz31","@ssoumier","@marionsouzeau","@gae
 
 def data_length(data)
     number=data.count
+    puts number
     return number
 
 end
-data_length(data)
+
 def count_string(data)
     mot=data.min_by(&:length)
-    print mot
+    puts mot
 end
 
 
 def count_five(data)
-    nombre=data_length(data)
+    nombre=381
     total=0
     i=0
     while i<nombre
@@ -27,10 +28,10 @@ def count_five(data)
         end
         i+=1
     end
-    print total
+    puts total
 end
 def maj(data)
-    nombre=data_length(data)
+    nombre=381
     i=0
     total=0
     lowerCase=0
@@ -44,12 +45,12 @@ def maj(data)
         end
         i+=1
     end
-    print total
+    puts total
 end
 
 
 def sort(data) 
-     nombre =data_length(data)
+     nombre =381
      dataSort= Array.new
      i=0
      while i<nombre
@@ -58,34 +59,15 @@ def sort(data)
         i+=1 
      end
      dataSort.sort!
-     print dataSort
+     puts dataSort
 end
-# def count_stringMax(data)
-#     nombre=data_length(data)
-#     numberLittle=data[0].size
-#     mot=data[0]
-#     i=1
-#     while i<nombre
-#          number=data[i].size
-           
-#         if number > numberLittle
-#             numberLittle=number
-#         end
-#         i+=1
-#     end
-#     print numberLittle
-#     return 
-# end
-
-
-
 
 def decroissant(data)
-    print data.sort_by(&:length)
+    puts data.sort_by(&:length)
 end
 
 def position(data)
-    nombre=data_length(data)
+    nombre=381
     i=0
     while i<nombre
         string =data[i]
@@ -95,11 +77,11 @@ def position(data)
         i+=1
         
     end
-    print " voici la position de penser#{position}"
+    puts " voici la position de penser#{position}"
 end
 
 def trier(data)
-    nombre=data_length(data)
+    nombre=381
     i=0
     j=0
     count =0
@@ -118,6 +100,41 @@ def trier(data)
     end
     
 end
-trier(data)
 
 
+def menu (data)
+    chiffre= 0
+    while chiffre != 9
+        puts  "voici la  liste du menu"
+        puts  " tapez  1  pour Combien y a-t-il de handle dans cette array ? "
+        puts  " tapez 2 Quel est le handle le plus court de cette liste ?"
+        puts   "tapez 3 Combien y-a-t'il de handle contenant 5 caractères (le @ ne compte pas pour un caractère) "
+        puts  "tapez 4 Combien commencent par une majuscule (première lettre juste après le @) ?"
+        puts   " tapez 5 Trie la liste de handle par ordre alphabétique. "
+        puts  "tapez 6 Trie la liste de handle par taille des handle (les plus petits en premiers, les plus grands après)"
+        puts  "tapez 7 Quelle est la position dans l'array de la personne @epenser ? "
+        puts  " tapez 8 Sors-moi une répartition des handle par taille de ces derniers"
+        puts   "tapez 9 pour quittez"
+        chiffre = gets.chomp.to_i
+        if chiffre == 1
+            data_length(data)
+        
+        elsif chiffre ==2
+            count_string(data)
+
+        elsif chiffre ==3
+            count_five(data)
+        elsif chiffre ==4
+            maj(data)
+        elsif chiffre ==5 
+            sort(data)
+        elsif chiffre ==6
+            decroissant(data)
+        elsif chiffre ==7
+            position(data)
+        elsif chiffre ==8
+            trier(data)
+        end
+    end
+end
+menu(data)

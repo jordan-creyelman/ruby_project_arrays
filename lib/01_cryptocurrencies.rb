@@ -40,16 +40,57 @@ def maxValue(tableau,price,names)
      end
     puts name
     puts crypto
-
+    return crypto
 end
 
-maxValue(tableau,price,names)
-
+def minValue(tableau)
+    # tabs = tableau.sort_by { |key, value| value }
+    tabs = tableau.min_by {|k,v| v}
+        print tabs
+end
+minValue(tableau)
 
 def devisesInferieur(tableau)
     tabs = tableau.select {|k,v|v<6000}
-    print tabs
+    puts tabs
 
 end
+
+def max(tableau)
+    tabs = tableau.select {|k,v|v<6000}
+    puts tabs.max_by{|k,v| v}  
+end
+
+def menu (tableau,price,names)
+    chiffre= 0
+    while chiffre != 5  
+        puts  "voici la  liste du menu"
+        puts  " tapez  1 La ou les crypto qui ont la plus grosse valeur."
+        puts  " tapez 2 La ou les crypto qui ont la plus petite valeur.?"
+        puts   "tapez 3Les devises dont le cours est inférieur à 6000 "
+        puts  "tapez 4 La devise la plus chère parmi celles dont le cours est inférieur à 6000"
+        puts   " tapez 5 pour quitter  "
+        
+        chiffre = gets.chomp.to_i
+        if chiffre == 1
+            maxValue(tableau,price,names)
+        
+        elsif chiffre ==2
+            minValue(tableau)
+
+        elsif chiffre ==3
+            devisesInferieur(tableau)
+        elsif chiffre ==4
+            max(tableau)
+       
+        end
+    end
+end
+menu(tableau,price,names)
+
+
+
+
+
 
 
