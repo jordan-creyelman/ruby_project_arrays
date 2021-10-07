@@ -44,34 +44,7 @@ def maxValue(tableau,price,names)
 
 end
 maxValue(tableau,price,names)
-def minValue(tableau,price,names)
-    i=1
-    j=0
-    crypto=0
-    name = []
-    nombre =price.count
-    montant = tableau[names[0]]
-    while i<nombre
-        montant =tableau[names[i]]
-        if montant <crypto
-           name.delete_at(0)
-           name.push(names[i])
-           crypto = tableau[names[i]]
-        end 
-        i+=1  
-       end  
-       while j<nombre
-           montant =tableau[names[i]]
-           if montant ==crypto
-              name.push(names[i])
-           end   
-        j+=1
-    end
-   puts name
-   puts crypto
 
-end
-minValue(tableau,price,names)
 def devisesInferieur(tableau)
     tabs = tableau.select {|k,v|v>6000}
     print tabs

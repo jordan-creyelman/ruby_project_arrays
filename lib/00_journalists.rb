@@ -46,44 +46,37 @@ def maj(data)
     print total
 end
 
-def alphabet(data)
-    sorted = data.sort { |a, b| a <=> b }
-    print sorted
-    return sorted
+Trier par ordre alphabétique
+
+def sort(data) 
+     nombre =data_length(data)
+     dataSort= Array.new
+     i=0
+     while i<nombre
+         string=data[i]
+        dataSort[i] = string
+        i+=1 
+     end
+     dataSort.sort!
+     print dataSort
 end
-
-alphabet(data)
-# Trier par ordre alphabétique
-
-# def sort(data) 
-#      nombre =data_length(data)
-#      dataSort= Array.new
-#      i=0
-#      while i<nombre
-#          string=data[i]
-#         dataSort[i] = string
-#         i+=1 
-#      end
-#      dataSort.sort!
-#      print dataSort
-# end
-# def count_stringMax(data)
-#     nombre=data_length(data)
-#     numberLittle=data[0].size
-#     mot=data[0]
-#     i=1
-#     while i<nombre
-#          number=data[i].size
+def count_stringMax(data)
+    nombre=data_length(data)
+    numberLittle=data[0].size
+    mot=data[0]
+    i=1
+    while i<nombre
+         number=data[i].size
            
-#         if number > numberLittle
-#             numberLittle=number
-#         end
-#         i+=1
-#     end
-#     print numberLittle
-#     return 
-# end
-# count_stringMax(data)
+        if number > numberLittle
+            numberLittle=number
+        end
+        i+=1
+    end
+    print numberLittle
+    return 
+end
+count_stringMax(data)
 
 def taille(data)
     
