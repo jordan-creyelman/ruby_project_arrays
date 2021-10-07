@@ -8,11 +8,15 @@ def convertirString(price)
     i=0
     while i<nombre do
         price [i]= price[i].to_f
+        prices = price[i]
         i+=1
+
     end
+    
 end
 
-convertirString(price)
+convertirString(price) 
+
 tableau=Hash[names.zip(price)] 
 
 def maxValue(tableau,price,names)
@@ -43,12 +47,15 @@ def maxValue(tableau,price,names)
     return crypto
 end
 
-def minValue(tableau)
+def minValue(tableaux)
+    tabs=tableaux.min_by{|k,v| v}
+    # tabs = tableau.sort_by {|k,v|v<0}
+
     # tabs = tableau.sort_by { |key, value| value }
-    tabs = tableau.min_by {|k,v| v}
+    
         print tabs
 end
-minValue(tableau)
+
 
 def devisesInferieur(tableau)
     tabs = tableau.select {|k,v|v<6000}
@@ -66,7 +73,7 @@ def menu (tableau,price,names)
     while chiffre != 5  
         puts  "voici la  liste du menu"
         puts  " tapez  1 La ou les crypto qui ont la plus grosse valeur."
-        puts  " tapez 2 La ou les crypto qui ont la plus petite valeur.?"
+        puts  " tapez 2 La ou les crypto qui ont la plus petite valeur.? pas  fait :("
         puts   "tapez 3Les devises dont le cours est inférieur à 6000 "
         puts  "tapez 4 La devise la plus chère parmi celles dont le cours est inférieur à 6000"
         puts   " tapez 5 pour quitter  "
